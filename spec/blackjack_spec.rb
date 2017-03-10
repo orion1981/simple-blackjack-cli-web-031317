@@ -1,3 +1,4 @@
+require "pry"
 describe "#welcome" do
   it "prints a welcome message to screen" do
     expect($stdout).to receive(:puts).with("Welcome to the Blackjack Table")
@@ -96,6 +97,7 @@ describe "#hit?" do
   it "deals another card when user types 'h'" do
     expect(self).to receive(:get_user_input).and_return("h")
     expect(self).to receive(:deal_card).and_return(7)
+#binding.pry
     expect(hit?(7)).to eq(14)
   end
 
